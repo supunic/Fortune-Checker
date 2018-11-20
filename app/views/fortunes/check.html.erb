@@ -1,0 +1,109 @@
+<div class="check_title_div">
+  <h2>Ranking<small>占い別ランキング一覧</small></h2>
+</div>
+<div class="check_rankingdiv">
+  <h3 class="check_name"><%= @name %></h3>
+  <p class="check_update"><%= simple_time(@fortunes[0].created_at) %> 更新</p>
+  <ul>
+    <% @fortunes.each do |fortune| %>
+      <% if @name == "めざまし占い" %>
+        <div class="fortune_content">
+          <%= link_to fortune_path(params_change_reverse(fortune.sign)) do %>
+            <div class="left_side">
+              <li class="rank"><%= fortune.rank %>位</li>
+              <li class="sign"><%= fortune.sign %></li>
+              <li class="sign_img"><%= image_tag img_select(fortune.sign) %></li>
+            </div>
+            <div class="right_side">
+              <li class="text1"><%= fortune.text1 %>。</li>
+              <li class="text2"><%= fortune.text2 %>。</li>
+              <li class="lucky_point">ラッキーポイント：<%= fortune.lucky_point %></li>
+              <% unless fortune.advice == "" %>
+                <li class="advice">アドバイス：<%= fortune.advice %></li>
+              <% end %>
+              <% unless fortune.good_luck_charm == "" %>
+                <li class="omajinai">おまじない：<%= fortune.good_luck_charm %></li>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% elsif @name == "ぐでたま占い" %>
+        <div class="fortune_content">
+          <%= link_to fortune_path(params_change_reverse(fortune.sign)) do %>
+            <div class="left_side">
+              <li class="rank"><%= fortune.rank %>位</li>
+              <li class="sign"><%= fortune.sign %></li>
+              <li class="sign_img"><%= image_tag img_select(fortune.sign) %></li>
+            </div>
+            <div class="right_side">
+              <li class="text1"><%= gudetama_hogehogenahito(fortune.rank) %></li>
+              <li class="text2"><%= fortune.text %></li>
+              <li class="lucky_color">ラッキーカラー：<%= fortune.lucky_color %></li>
+              <li class="lucky_item">ラッキーアイテム：<%= fortune.lucky_item %></li>
+              <% unless fortune.advice == "" %>
+                <li class="gudetama_advice">アドバイス：<%= fortune.advice %></li>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% elsif @name == "ゴーゴー星占い" %>
+        <div class="fortune_content gogo">
+          <%= link_to fortune_path(params_change_reverse(fortune.sign)) do %>
+            <div class="left_side">
+              <% if gogototal_search_no1(@fortune_total, fortune.sign).any? %>
+                <div class="gogo_rank_div">
+                  <% gogototal_search_no1(@fortune_total, fortune.sign).each do |no1| %>
+                    <li class="gogo_rank"><%= no1 %></li>
+                  <% end %>
+                </div>
+              <% end %>
+              <li class="sign"><%= fortune.sign %></li>
+              <li class="sign_img"><%= image_tag img_select(fortune.sign) %></li>
+            </div>
+            <div class="right_side">
+              <div class="gogo_point">
+                <li class="gogo_kinun">金運</li>
+                <% fortune.kinun.times do %>
+                  <span class="kinun_point"><i class="fas fa-coins"></i></span>
+                <% end %>
+                <br>
+                <li class="gogo_renai">恋愛運</li>
+                <% fortune.renai.times do %>
+                  <span class="renai_point"><i class="fas fa-heart"></i></span>
+                <% end %>
+                <br>
+                <li class="gogo_shigoto">仕事運</li>
+                <% fortune.shigoto.times do %>
+                  <span class="shigoto_point"><i class="fas fa-briefcase"></i></span>
+                <% end %>
+                <br>
+                <li class="gogo_kenko">健康運</li>
+                <% fortune.kenko.times do %>
+                  <span class="kenko_point"><i class="fas fa-dumbbell"></i></span>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="bottom_side">
+            <li class="text"><%= fortune.text %></li>
+            <li class="lucky_color">ラッキーカラー：<%= fortune.lucky_color %></li>
+            <li class="lucky_item">幸運のカギ：<%= fortune.lucky_item %></li>
+          </div>
+        </div>
+      <% elsif @name == "スッキりす誕生月占い" %>
+        <div class="fortune_content">
+          <div class="left_side">
+            <li class="rank"><%= fortune.rank %>位</li>
+            <li class="month"><%= fortune.month %>月生まれ</li>
+            <li class="sign_img"><%= image_tag month_img_select(fortune.month) %></li>
+          </div>
+          <div class="right_side">
+            <li class="text1"><%= sukkirisu_hogehogerisu(fortune.rank) %></li>
+            <li class="text2"><%= fortune.text %></li>
+            <li class="lucky_point">ラッキーカラー：<%= fortune.lucky_color %></li>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,2 @@
+module TossHelper
+end

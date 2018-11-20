@@ -1,0 +1,44 @@
+.tos1_background {
+  position: relative;
+  z-index: 9999;
+  background-color: #fff;
+}
+.tos1_background .tos1 {
+  background-color: #fff;
+  padding: 40px 10px 0;
+  width: 92%;
+  margin: 0 auto;
+}
+.tos1_background .tos1 h1 {
+  font-size: 26px;
+  color: #555;
+}
+.tos1_background .tos1 h1 small {
+  color: #999;
+}
+.tos2_background {
+  position: relative;
+  z-index: 9999;
+  background-color: #fff;
+}
+.tos2_background .tos2 {
+  padding: 20px 10px 40px;
+  width: 92%;
+  margin: 0 auto;
+}
+.tos2_background .tos2 .page-header h2 {
+  font-size: 23px;
+  margin: 30px 0 12px;
+}
+.tos2_background .tos2 p {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+  .tos1_background .tos1,
+  .tos2_background .tos2  {
+    width: 980px;
+  }
+}

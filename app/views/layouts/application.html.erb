@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="description" content="朝の情報番組の占い結果をまとめてチェック！「めざまし占い」「ぐでたま占い」「ゴーゴー星占い」「スッキりす誕生月占い」の占いランキングを一覧で確認！星座別で各ランキングを一気にチェックできる！Twitterをフォローすると、毎朝あなたのタイムラインに占い結果が届く！">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="app_fortune">
+    <meta property="og:site_name" content="Fortune Checker">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Fortune Checker">
+    <meta property="og:description" content="朝の情報番組の占い結果をまとめてチェック！「めざまし占い」「ぐでたま占い」「ゴーゴー星占い」「スッキりす誕生月占い」の占いランキングを一覧で確認！星座別で各ランキングを一気にチェックできる！Twitterをフォローすると、毎朝あなたのタイムラインに占い結果が届く！">
+    <meta property="og:image" content="/assets/ogp_icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/touch_icon.png">
+    <link rel="icon" type="image/png" href="/assets/fabicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/fabicon.png" sizes="16x16">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru|Righteous|Roboto" rel="stylesheet">
+    <title>Fortune Checker</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header>
+      <nav class="header_nav">
+        <div class="header_title_div">
+          <%= link_to root_path do %>
+            <h1 class="headerTitle">Fortune Checker</h1>
+          <% end %>
+        </div>
+      </nav>
+      <div class="backgroundColor"></div>
+      <div class="backgroundImg"></div>
+    </header>
+    <%= yield %>
+    <footer>
+      <div class="footerTitle">
+        <a href="#"><p>Fortune Checker</p></a>
+      </div>
+      <div class="copy">
+        <p>Copyright ©️supunic All Rights Reserved</p>
+      </div>
+      <ul>
+        <li><%= link_to '利用規約', toss_index_path %></li>
+        <li><%= link_to 'プライバシーポリシー', pps_index_path %></li>
+      </ul>
+    </footer>
+  </body>
+</html>

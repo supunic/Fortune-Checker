@@ -1,0 +1,128 @@
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+<div class="show_title_div">
+  <div class="show_title">
+    <h2>今日の<%= @sign %>の運勢</h2>
+    <div class ="show_img_div">
+      <%= image_tag img_select(@sign) %>
+    </div>
+  </div>
+</div>
+<div class="show_content_div">
+  <div class="meza_gude_div">
+    <div class="mezamashi_show">
+      <%= link_to check_fortune_path("mezamashi") do %>
+        <h3 class="uranai_title">めざまし占い</h3>
+      <% end %>
+      <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
+      <ul>
+        <li class="uranai_rank"><%= @mezamashi_sign_fortune.rank %>位</li>
+        <% unless @mezamashi_lucky_item[:image] == nil %>
+          <p class="show_image"><%= image_tag @mezamashi_lucky_item[:image] %></p>
+        <% end %>
+        <li class="uranai_text1"><%= @mezamashi_sign_fortune.text1 %>。</li>
+        <li class="uranai_text2"><%= @mezamashi_sign_fortune.text2 %>。</li>
+        <li class="lucky_point">ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %></li>
+        <% unless @mezamashi_sign_fortune.advice == "" %>
+          <li class="advice">アドバイス：<%= @mezamashi_sign_fortune.advice %></li>
+        <% end %>
+        <% unless @mezamashi_sign_fortune.good_luck_charm == "" %>
+          <li class="omajinai">おまじない：<%= @mezamashi_sign_fortune.good_luck_charm %></li>
+        <% end %>
+        <div class="sns_share_btn">
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+            data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○めざまし占い：<%= @mezamashi_sign_fortune.rank %>位&#13;&#10;<%= @mezamashi_sign_fortune.text1 %>。<%= @mezamashi_sign_fortune.text2 %>。&#13;&#10;ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+            data-via="app_fortune"
+            data-hashtags="今朝の占い&#13;&#10;"
+            data-related="app_fortune,supunic_sup"
+            data-lang="ja"
+            data-show-count="false">Tweet</a>
+          <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.com" style="display: none;"></div>
+        </div>
+      </ul>
+    </div>
+    <div class="godetama_show">
+      <%= link_to check_fortune_path("gudetama") do %>
+        <h3 class="uranai_title">ぐでたま占い</h3>
+      <% end %>
+      <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
+      <ul>
+        <li class="uranai_rank"><%= @gudetama_sign_fortune.rank %>位</li>
+        <li class="godetamanahito"><%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %></li>
+        <% unless @gudetama_lucky_item[:image] == nil %>
+          <p class="show_image"><%= image_tag @gudetama_lucky_item[:image] %></p>
+        <% end %>
+        <li class="uranai_text"><%= @gudetama_sign_fortune.text %>。</li>
+        <li class="lucky_color">ラッキーカラー：<%= @gudetama_sign_fortune.lucky_color %></li>
+        <li class="lucky_item">ラッキーアイテム：<%= @gudetama_sign_fortune.lucky_item %></li>
+        <% unless @gudetama_sign_fortune.advice == "" %>
+          <li class="advice">アドバイス：<%= @gudetama_sign_fortune.advice %></li>
+        <% end %>
+        <div class="sns_share_btn">
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+            data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○ぐでたま占い：<%= @gudetama_sign_fortune.rank %>位&#13;&#10;<%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %>&#13;&#10;<%= @gudetama_sign_fortune.text %>。&#13;&#10;ラッキーカラー：<%= @gudetama_sign_fortune.lucky_color %>&#13;&#10;ラッキーアイテム：<%= @gudetama_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+            data-via="app_fortune"
+            data-hashtags="今朝の占い&#13;&#10;"
+            data-related="app_fortune,supunic_sup"
+            data-lang="ja"
+            data-show-count="false">Tweet</a>
+          <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.cmm" style="display: none;"></div>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="gogo_show">
+    <%= link_to check_fortune_path("gogo") do %>
+      <h3 class="uranai_title">ゴーゴー星占い</h3>
+    <% end %>
+    <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
+    <ul>
+      <div class="gogo_rank_div">
+        <% if gogototal_search_no1(@gogototal_fortune, @sign).any? %>
+          <% gogototal_search_no1(@gogototal_fortune, @sign).each do |no1|%>
+            <li class="gogo_rank"><%= no1 %></li>
+          <% end %>
+        <% else %>
+          <li class="gogo_rank"><%= image_tag img_select(@sign) %></li>
+        <% end %>
+      </div>
+      <% unless @gogo_lucky_item[:image] == nil %>
+        <p class="show_image"><%= image_tag @gogo_lucky_item[:image] %></p>
+      <% end %>
+      <li class="uranai_text"><%= @gogo_sign_fortune.text %></li>
+      <div class="gogo_point_div">
+        <li class="gogo_kinun">金運</li>
+        <% @gogo_sign_fortune.kinun.times do %>
+          <span class="kinun_point"><i class="fas fa-coins"></i></span>
+        <% end %>
+        <br>
+        <li class="gogo_renai">恋愛運</li>
+        <% @gogo_sign_fortune.renai.times do %>
+          <span class="renai_point"><i class="fas fa-heart"></i></span>
+        <% end %>
+        <br>
+        <li class="gogo_shigoto">仕事運</li>
+        <% @gogo_sign_fortune.shigoto.times do %>
+          <span class="shigoto_point"><i class="fas fa-briefcase"></i></span>
+        <% end %>
+        <br>
+        <li class="gogo_kenko">健康運</li>
+        <% @gogo_sign_fortune.kenko.times do %>
+          <span class="kenko_point"><i class="fas fa-dumbbell"></i></span>
+        <% end %>
+      </div>
+      <li class="lucky_color">ラッキーカラー：<%= @gogo_sign_fortune.lucky_color %></li>
+      <li class="fortune_key">幸運のカギ：<%= @gogo_sign_fortune.lucky_item %></li>
+      <div class="sns_share_btn">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+          data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○ゴーゴー星占い&#13;&#10;<%= @gogo_sign_fortune.text %>&#13;&#10;金運：<%= @gogo_sign_fortune.kinun.to_s %>&#13;&#10;恋愛運：<%= @gogo_sign_fortune.renai.to_s %>&#13;&#10;仕事運：<%= @gogo_sign_fortune.shigoto.to_s %>&#13;&#10;健康運：<%= @gogo_sign_fortune.kenko.to_s %>&#13;&#10;ラッキーカラー：<%= @gogo_sign_fortune.lucky_color %>&#13;&#10;幸運のカギ：<%= @gogo_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+          data-via="app_fortune"
+          data-hashtags="今朝の占い&#13;&#10;"
+          data-related="app_fortune,supunic_sup"
+          data-lang="ja"
+          data-show-count="false">Tweet</a>
+        <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.cmm" style="display: none;"></div>
+      </div>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url('Akzidenz-grotesk-bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url('Akzidenz-grotesk-light.ttf') format('truetype');
+  font-weight: normal;
+}
+/* @font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url('../fonts/Akzidenz-grotesk-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Akzidenz Grotesk';
+  src: url('../fonts/Akzidenz-grotesk-bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: bold;
+} */
+ /*------------------------------------------------------------
+ 	デフォルトスタイル
+ ------------------------------------------------------------*/
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre, small,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, font, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td {
+ 	margin: 0;
+ 	padding: 0;
+ 	background: transparent;
+ 	border: 0;
+ 	outline: 0;
+ 	font-size: 1rem;
+  color: #333;
+ }
+
+ body {
+ 	font-size: 62.5%;
+ }
+
+ body,
+ table,
+ input, textarea, select, option, {
+  font-family: 'Kosugi Maru', 'Roboto', sans-serif;
+ }
+
+ article, aside, canvas, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section, summary {
+ 	display: block;
+ }
+
+ ol, ul {
+ 	list-style: none;
+ }
+
+ blockquote, q {
+ 	quotes: none;
+ }
+
+ :focus {
+ 	outline: 0;
+ }
+
+ ins {
+ 	text-decoration: none;
+ }
+
+ del {
+ 	text-decoration: line-through;
+ }
+
+ img {
+ 	vertical-align: top;
+ }
+
+ a,
+ a:link {
+ 	color: #333;
+ 	text-decoration: none;
+ }
+
+ a:visited {
+ 	color: #333;
+ 	text-decoration: none;
+ }
+
+ a:hover {
+ 	color: #333;
+ 	text-decoration: none;
+ }
+
+ a:active {
+ 	color: #333;
+ 	text-decoration: none;
+ }

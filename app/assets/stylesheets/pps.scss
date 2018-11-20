@@ -1,0 +1,48 @@
+.pp1_background {
+  position: relative;
+  z-index: 9999;
+  background-color: #fff;
+}
+.pp1_background .pp1 {
+  background-color: #fff;
+  padding: 40px 10px 0;
+  width: 92%;
+  margin: 0 auto;
+}
+.pp1_background .pp1 h1 {
+  font-size: 26px;
+  color: #555;
+}
+.pp1_background .pp1 h1 small {
+  color: #999;
+}
+.pp2_background {
+  position: relative;
+  z-index: 9999;
+  background-color: #fff;
+}
+.pp2_background .pp2 {
+  padding: 0 10px 40px;
+  width: 92%;
+  margin: 0 auto;
+}
+.pp2_background .pp2 .page-header h2 {
+  font-size: 23px;
+  padding: 30px 0 12px;
+}
+.pp2_background .pp2 p {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+}
+.pp2_background .pp2 a {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #3366FF;
+}
+@media screen and (min-width: 1024px) {
+  .pp1_background .pp1,
+  .pp2_background .pp2  {
+    width: 980px;
+  }
+}
