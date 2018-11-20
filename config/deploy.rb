@@ -4,7 +4,7 @@ lock '3.6.0'
 set :application, 'uranai_app'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/xxxxxxxxx/yyyyyyyyy'
+set :repo_url, 'https://github.com/seiyaendo8/uranai_app.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
