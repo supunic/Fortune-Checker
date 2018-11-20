@@ -15,7 +15,7 @@
       <li><%= link_to "ゴーゴー星占い", check_fortune_path("gogo") %></li>
       <li><%= link_to "スッキりす誕生月占い", check_fortune_path("sukkirisu") %></li>
     </ul>
-    <p class="cover_angle_down"><a href="#sec01"><img src="/assets/arw_bottom.png" alt="angle_down"></a></p>
+    <p class="cover_angle_down"><a href="#sec01"><%= image_tag "arw_bottom.png" %></a></p>
   </section>
   <section id="sec01">
     <div class="select_sign_title_div">
@@ -24,18 +24,18 @@
     </div>
     <div class="select_sign_div">
       <ul>
-        <li><%= link_to fortune_path("ohitsuji") do %><img src="/assets/ohitsuji.png" alt="ohitsuji"><p>おひつじ座</p><% end %></li>
-        <li><%= link_to fortune_path("oushi") do %><img src="/assets/oushi.png" alt="oushi"><p>おうし座</p><% end %></li>
-        <li><%= link_to fortune_path("futago") do %><img src="/assets/futago.png" alt="futago"><p>ふたご座</p><% end %></li>
-        <li><%= link_to fortune_path("kani") do %><img src="/assets/kani.png" alt="kani"><p>かに座</p><% end %></li>
-        <li><%= link_to fortune_path("shishi") do %><img src="/assets/shishi.png" alt="shishi"><p>しし座</p><% end %></li>
-        <li><%= link_to fortune_path("otome") do %><img src="/assets/otome.png" alt="otome"><p>おとめ座</p><% end %></li>
-        <li><%= link_to fortune_path("tenbin") do %><img src="/assets/tenbin.png" alt="tenbin"><p>てんびん座</p><% end %></li>
-        <li><%= link_to fortune_path("sasori") do %><img src="/assets/sasori.png" alt="sasori"><p>さそり座</p><% end %></li>
-        <li><%= link_to fortune_path("ite") do %><img src="/assets/ite.png" alt="ite"><p>いて座</p><% end %></li>
-        <li><%= link_to fortune_path("yagi") do %><img src="/assets/yagi.png" alt="yagi"><p>やぎ座</p><% end %></li>
-        <li><%= link_to fortune_path("mizugame") do %><img src="/assets/mizugame.png" alt="mizugame"><p>みずがめ座</p><% end %></li>
-        <li><%= link_to fortune_path("uo") do %><img src="/assets/uo.png" alt="uo"><p>うお座</p><% end %></li>
+        <li><%= link_to fortune_path("ohitsuji") do %><%= image_tag "ohitsuji.png" %><p>おひつじ座</p><% end %></li>
+        <li><%= link_to fortune_path("oushi") do %><%= image_tag "oushi.png" %><p>おうし座</p><% end %></li>
+        <li><%= link_to fortune_path("futago") do %><%= image_tag "futago.png" %><p>ふたご座</p><% end %></li>
+        <li><%= link_to fortune_path("kani") do %><%= image_tag "kani.png" %><p>かに座</p><% end %></li>
+        <li><%= link_to fortune_path("shishi") do %><%= image_tag "shishi.png" %><p>しし座</p><% end %></li>
+        <li><%= link_to fortune_path("otome") do %><%= image_tag "otome.png" %><p>おとめ座</p><% end %></li>
+        <li><%= link_to fortune_path("tenbin") do %><%= image_tag "tenbin.png" %><p>てんびん座</p><% end %></li>
+        <li><%= link_to fortune_path("sasori") do %><%= image_tag "sasori.png" %><p>さそり座</p><% end %></li>
+        <li><%= link_to fortune_path("ite") do %><%= image_tag "ite.png" %><p>いて座</p><% end %></li>
+        <li><%= link_to fortune_path("yagi") do %><%= image_tag "yagi.png" %><p>やぎ座</p><% end %></li>
+        <li><%= link_to fortune_path("mizugame") do %><%= image_tag "mizugame.png" %><p>みずがめ座</p><% end %></li>
+        <li><%= link_to fortune_path("uo") do %><%= image_tag "uo.png" %><p>うお座</p><% end %></li>
       </ul>
     </div>
   </section>
