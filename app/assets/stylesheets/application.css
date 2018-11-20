@@ -15,20 +15,6 @@
  */
 
 @charset "utf-8";
-
-@font-face {
-  font-family: 'Akzidenz Grotesk';
-  src: url('Akzidenz-grotesk-bold.ttf') format('truetype');
-  /* src: font-url('Akzidenz-grotesk-bold.ttf') format('truetype'); */
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Akzidenz Grotesk';
-  src: url('Akzidenz-grotesk-light.ttf') format('truetype');
-  /* src: font-url('Akzidenz-grotesk-light.ttf') format('truetype'); */
-  font-weight: normal;
-}
-
  /*------------------------------------------------------------
  	デフォルトスタイル
  ------------------------------------------------------------*/
