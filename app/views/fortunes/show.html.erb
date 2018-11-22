@@ -17,9 +17,6 @@
       <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
       <ul>
         <li class="uranai_rank"><%= @mezamashi_sign_fortune.rank %>位</li>
-        <% unless @mezamashi_lucky_item[:image] == nil %>
-          <!-- <p class="show_image"><%= image_tag @mezamashi_lucky_item[:image] %></p> -->
-        <% end %>
         <li class="uranai_text1"><%= @mezamashi_sign_fortune.text1 %>。</li>
         <li class="uranai_text2"><%= @mezamashi_sign_fortune.text2 %>。</li>
         <li class="lucky_point">ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %></li>
@@ -49,9 +46,6 @@
       <ul>
         <li class="uranai_rank"><%= @gudetama_sign_fortune.rank %>位</li>
         <li class="godetamanahito"><%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %></li>
-        <% unless @gudetama_lucky_item[:image] == nil %>
-          <!-- <p class="show_image"><%= image_tag @gudetama_lucky_item[:image] %></p> -->
-        <% end %>
         <li class="uranai_text"><%= @gudetama_sign_fortune.text %>。</li>
         <li class="lucky_color">ラッキーカラー：<%= @gudetama_sign_fortune.lucky_color %></li>
         <li class="lucky_item">ラッキーアイテム：<%= @gudetama_sign_fortune.lucky_item %></li>
@@ -86,9 +80,6 @@
           <li class="gogo_rank"><%= image_tag img_select(@sign) %></li>
         <% end %>
       </div>
-      <% unless @gogo_lucky_item[:image] == nil %>
-        <!-- <p class="show_image"><%= image_tag @gogo_lucky_item[:image] %></p> -->
-      <% end %>
       <li class="uranai_text"><%= @gogo_sign_fortune.text %></li>
       <div class="gogo_point_div">
         <li class="gogo_kinun">金運</li>
