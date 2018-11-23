@@ -19,9 +19,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  # gem 'pry-rails'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'dotenv-rails'
 
   gem 'capistrano', '3.6.0'
@@ -51,7 +51,3 @@ gem 'slack-api'
 # デブロイ用
 gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
-
-gem 'pry-rails'
-gem 'better_errors'
-gem 'binding_of_caller'
