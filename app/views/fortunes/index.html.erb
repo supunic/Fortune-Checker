@@ -158,11 +158,11 @@
           </ul>
           <ul class="fortune_result">
             <li class="rank_num1"><%= @mezamashi[0].sign %></li>
-            <li><p><%= @mezamashi[0].text1 %>。<%= @mezamashi[0].text2 %>。</p></li>
+            <li><p><%= @mezamashi[0].text1 %>。<%= @mezamashi[0].text2 %></p></li>
             <li class="rank_num2"><%= @mezamashi[1].sign %></li>
-            <li><p><%= @mezamashi[1].text1 %>。<%= @mezamashi[1].text2 %>。</p></li>
+            <li><p><%= @mezamashi[1].text1 %>。<%= @mezamashi[1].text2 %></p></li>
             <li class="rank_num3"><%= @mezamashi[2].sign %></li>
-            <li><p><%= @mezamashi[2].text1 %>。<%= @mezamashi[2].text2 %>。</p></li>
+            <li><p><%= @mezamashi[2].text1 %>。<%= @mezamashi[2].text2 %></p></li>
           </ul>
           <%= link_to "", check_fortune_path("mezamashi"), class: "more_btn" %>
         </div>
