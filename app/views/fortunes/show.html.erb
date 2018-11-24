@@ -17,8 +17,8 @@
       <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
       <ul>
         <li class="uranai_rank"><%= @mezamashi_sign_fortune.rank %>位</li>
-        <li class="uranai_text1"><%= @mezamashi_sign_fortune.text1 %>。</li>
-        <li class="uranai_text2"><%= @mezamashi_sign_fortune.text2 %>。</li>
+        <li class="uranai_text1"><%= @mezamashi_sign_fortune.text1 %>…</li>
+        <li class="uranai_text2"><%= @mezamashi_sign_fortune.text2 %></li>
         <li class="lucky_point">ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %></li>
         <% unless @mezamashi_sign_fortune.advice == "" %>
           <li class="advice">アドバイス：<%= @mezamashi_sign_fortune.advice %></li>

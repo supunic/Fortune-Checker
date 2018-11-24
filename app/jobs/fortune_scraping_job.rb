@@ -29,16 +29,16 @@ class FortuneScrapingJob < ApplicationJob
       Gogototal.gogoFortuneTotal
 
       # Slackにメッセージ送信
-      # Slack.chat_postMessage(
-      #   channel: '#占いapp',
-      #   text: 'FortuneChecker スクレイピングが実行されました。'
-      # )
+      Slack.chat_postMessage(
+        channel: '#占いapp',
+        text: 'FortuneChecker スクレイピングが実行されました。'
+      )
     rescue
       # Slackにメッセージ送信
-      # Slack.chat_postMessage(
-      #   channel: '#占いapp',
-      #   text: 'FortuneChecker スクレイピングにエラーが発生しています。'
-      # )
+      Slack.chat_postMessage(
+        channel: '#占いapp',
+        text: 'FortuneChecker スクレイピングにエラーが発生しています。'
+      )
     end
   end
 end

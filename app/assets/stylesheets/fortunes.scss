@@ -202,11 +202,11 @@ section h2 {
     display: block;
     margin: 8px 0 5px 0;
     font-size: 12px;
-    top: 20%;
+    top: 10%;
   }
   #sec00 .top_title {
     font-size: 80px;
-    top: 23%;
+    top: 15%;
   }
   #sec00 .sumunic_snsIcn {
     top: 55%;
@@ -239,14 +239,17 @@ section h2 {
 }
 @media screen and (max-width: 359px) {
   #sec00 .top_subtitle {
-    top: 13%;
+    top: 9%;
   }
   #sec00 .top_title {
     font-size: 70px;
-    top: 18%;
+    top: 15%;
   }
   #sec00 ul {
     top: 72%;
+  }
+  #sec00 .cover_angle_down {
+    bottom: 4%;
   }
   .supunic {
     font-size: 12px;
@@ -1005,7 +1008,7 @@ footer ul li a {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  padding-top: 70px;
+  padding-top: 100px;
 }
 .gogo_show ul {
   position: relative;
@@ -1035,7 +1038,7 @@ footer ul li a {
   top: 7px;
   left: 75px;
   font-size: 14px;
-  margin: 10px 0;
+  margin: 10px 16px 10px 0;
   color: #888;
   line-height: 1.3;
   letter-spacing: 0.03em;
@@ -1155,6 +1158,7 @@ footer ul li a {
 .gogo_show ul .gogo_point_div {
   position: absolute;
   top: 132px;
+  width: 88%;
 }
 .gogo_show ul .fortune_key {
   margin-top: 5px;
@@ -1226,6 +1230,7 @@ footer ul li a {
 }
 .kenko_point i {
   color: yellowgreen;
+  font-size: 13px;
 }
 @media screen and (max-width: 760px) {
   .show_title,
@@ -1429,10 +1434,11 @@ footer ul li a {
   position: absolute;
   top: 10px;
   left: 20px;
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   line-height: 1.3;
   letter-spacing: 0.03em;
+  margin-right: 16px;
 }
 .fortune_content .right_side .text2 {
   position: absolute;
@@ -1448,6 +1454,7 @@ footer ul li a {
   top: 60px;
   left: 20px;
   font-size: 11px;
+  margin-right: 16px;
 }
 .fortune_content .right_side .lucky_item {
   position: absolute;
@@ -1475,7 +1482,7 @@ footer ul li a {
 }
 .fortune_content .right_side .omajinai {
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 20px;
   font-size: 11px;
 }
@@ -1483,6 +1490,7 @@ footer ul li a {
   position: absolute;
   top: 0;
   left: 20px;
+  width: 100%;
 }
 .fortune_content .bottom_side {
   width: 100%;
