@@ -1,5 +1,5 @@
 set :output, "log/scraping.log"
-set :environment, :development
+set :environment, :production
 
 # スクレイピング処理
 every :weekday, at: '8:05 am' do
