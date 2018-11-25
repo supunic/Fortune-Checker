@@ -21,7 +21,7 @@ body {
   font-family: 'Kosugi Maru', sans-serif;
 }
 section {
-  opacity: 0.8;
+  // opacity: 0.8;
   position: relative;
   z-index: 3;
 }
@@ -205,11 +205,11 @@ section h2 {
     top: 10%;
   }
   #sec00 .top_title {
-    font-size: 80px;
+    font-size: 65px;
     top: 15%;
   }
   #sec00 .sumunic_snsIcn {
-    top: 55%;
+    top: 42%;
   }
   #sec00 ul.fortune_btn li {
     width: 49%;
@@ -224,8 +224,8 @@ section h2 {
     line-height: 46px;
   }
   #sec00 ul.fortune_btn {
-    width: 92%;
-    top: 68%;
+    width: 86%;
+    top: 56%;
   }
   .supunic {
     top: 95%;
@@ -236,20 +236,27 @@ section h2 {
   #sec00 ul.fortune_btn li a:hover:before {
     height: 0;
   }
+  #sec00 .cover_angle_down {
+    top: 80%;
+    bottom: auto;
+  }
 }
 @media screen and (max-width: 359px) {
   #sec00 .top_subtitle {
-    top: 9%;
+    top: 7%;
   }
   #sec00 .top_title {
-    font-size: 70px;
-    top: 15%;
+    font-size: 60px;
+    top: 13%;
+  }
+  #sec00 .sumunic_snsIcn {
+    top: 44%;
   }
   #sec00 ul {
     top: 72%;
   }
   #sec00 .cover_angle_down {
-    bottom: 4%;
+    top: 81%;
   }
   .supunic {
     font-size: 12px;
@@ -972,6 +979,9 @@ footer ul li a {
 .godetama_show {
   margin-bottom: 15px;
 }
+.gogo_show {
+  padding-bottom: 0;
+}
 .uranai_title {
   font-size: 22px;
   color: #fff;
@@ -1016,6 +1026,7 @@ footer ul li a {
   padding: 20px;
   border-radius: 5px;
   padding-top: 250px;
+  margin-bottom: 30px;
 }
 .uranai_rank {
   position: absolute;
@@ -1328,7 +1339,7 @@ footer ul li a {
 .check_rankingdiv {
   position: relative;
   height: 100%;
-  padding: 10px 20px;
+  padding: 10px 20px 0 20px;
   opacity: 0.8;
   z-index: 3;
   overflow: hidden;
@@ -1344,6 +1355,9 @@ footer ul li a {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+}
+.fortune_content:last-child {
+  margin-bottom: 30px;
 }
 .fortune_content.gogo {
   margin-bottom: 40px;
