@@ -900,9 +900,6 @@ footer ul li a {
 .ranking_div_about li:nth-child(3n) {
   margin-right: 0;
 }
-@media screen and (max-width: 760px) {
-
-}
 @media screen and (min-width: 760px) {
   .overall_ranking_div {
     position: relative;
@@ -930,6 +927,11 @@ footer ul li a {
     overflow: visible  !important;
     top: 180px;
     left: 400px;
+  }
+}
+@media screen and (max-width: 359px) {
+  .top3_ranking_div .ranking_img {
+    left: 160px;
   }
 }
 
@@ -1624,10 +1626,19 @@ footer ul li a {
   }
 }
 @media screen and (max-width: 360px) {
+  .fortune_content .bottom_side {
+    padding-top: 110px;
+  }
   .fortune_content .right_side .text1,
   .fortune_content .right_side .text2,
   .fortune_content .bottom_side .text {
     font-size: 11px;
+  }
+  .fortune_content .bottom_side .text {
+    top: 35px;
+  }
+  .fortune_content .bottom_side .lucky_color {
+    top: 80px;
   }
   .fortune_content .right_side .lucky_point,
   .fortune_content .right_side .lucky_item,
@@ -1636,6 +1647,9 @@ footer ul li a {
   .fortune_content .right_side .gudetama_advice,
   .fortune_content .right_side .omajinai {
     font-size: 10px;
+  }
+  .fortune_content .bottom_side .lucky_item {
+    top: 95px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -1651,5 +1665,14 @@ footer ul li a {
   .fortune_content .right_side .gudetama_advice,
   .fortune_content .right_side .omajinai {
     font-size: 9px;
+  }
+  .fortune_content .bottom_side .lucky_color {
+    top: 82px;
+  }
+  .fortune_content .bottom_side .lucky_item {
+    top: 98px;
+  }
+  .fortune_content .bottom_side .text {
+    top: 42px;
   }
 }
