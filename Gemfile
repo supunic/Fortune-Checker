@@ -29,6 +29,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
+  gem 'capistrano3-delayed-job', '~> 1.0'
 end
 
 group :development do
@@ -44,6 +45,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'twitter'
 gem 'faraday'
 gem 'delayed_job_active_record'
+gem 'daemons'
 gem 'whenever', require: false
 gem 'amazon-ecs'
 gem 'slack-api'

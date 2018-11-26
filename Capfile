@@ -28,6 +28,7 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
 require 'whenever/capistrano'
+require 'capistrano/delayed-job'
 
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

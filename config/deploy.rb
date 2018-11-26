@@ -30,6 +30,10 @@ set :log_level, :info
 # Wheneverのセット
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
+# delayed_job worker設定
+set :delayed_job_workers, 1
+set :delayed_job_roles, [:app, :background]
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
