@@ -138,6 +138,9 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     kgio (2.11.2)
     libv8 (3.16.14.19)
     listen (3.1.5)
@@ -306,6 +309,7 @@ DEPENDENCIES
   dotenv-rails
   faraday
   jbuilder (~> 2.5)
+  jquery-turbolinks
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   pry-rails

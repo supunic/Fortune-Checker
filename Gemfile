@@ -49,6 +49,7 @@ gem 'daemons'
 gem 'whenever', require: false
 gem 'amazon-ecs'
 gem 'slack-api'
+gem 'jquery-turbolinks'
 
 # デブロイ用
 gem 'unicorn'
