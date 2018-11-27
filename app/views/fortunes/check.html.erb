@@ -15,8 +15,7 @@
               <li class="sign_img"><%= image_tag img_select(fortune.sign) %></li>
             </div>
             <div class="right_side">
-              <li class="text1"><%= fortune.text1 %>…</li>
-              <li class="text2"><%= fortune.text2 %></li>
+              <li class="text1"><%= fortune.text1 %></li>
               <li class="lucky_point">ラッキーポイント：<%= fortune.lucky_point %></li>
               <% unless fortune.advice == "" %>
                 <li class="advice">アドバイス：<%= fortune.advice %></li>
