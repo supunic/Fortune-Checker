@@ -31,13 +31,27 @@ class FortuneScrapingJob < ApplicationJob
       # Slackにメッセージ送信
       Slack.chat_postMessage(
         channel: '#占いapp',
-        text: 'FortuneChecker スクレイピングが実行されました。'
+        text: "FortuneChecker\nスクレイピングが実行されました。"
       )
+      
+      # Tweet Jobの起動
+      begin
+        TweetJob.perform_later
+        Slack.chat_postMessage(
+          channel: '#占いapp',
+          text: "FortuneChecker\nツイートが実行されました。"
+        )
+      rescue
+        Slack.chat_postMessage(
+          channel: '#占いapp',
+          text: "FortuneChecker\nツイートにエラーが発生しています。"
+        )
+      end
     rescue
       # Slackにメッセージ送信
       Slack.chat_postMessage(
         channel: '#占いapp',
-        text: 'FortuneChecker スクレイピングにエラーが発生しています。'
+        text: "FortuneChecker\nスクレイピングにエラーが発生しています。"
       )
     end
   end

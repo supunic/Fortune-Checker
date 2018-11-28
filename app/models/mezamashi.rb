@@ -30,8 +30,9 @@ class Mezamashi < ApplicationRecord
 
     text_num = page_ja.index('text', number)
     start_num = page_ja.index('>', text_num)
-    end_num = page_ja.index('<', start_num)
-    @text1 = page_ja.slice(start_num+1..end_num-1)
+    comma_num = page_ja.index(',', start_num)
+    end_num = page_ja.index('<', comma_num)
+    @text1 = page_ja.slice(start_num+1..comma_num-1) + page_ja.slice(comma_num+1..end_num-1)
 
     lucky_point_num = page_ja.index('point', number)
     start_num = page_ja.index('>', lucky_point_num)

@@ -21,7 +21,6 @@ class TweetJob < ApplicationJob
     end
 
     text = "【今朝の占いまとめ】\n\n○めざまし占い\n1位:#{m[0]}\n2位:#{m[1]}\n3位:#{m[2]}\n\n○ぐでたま占い\n1位:#{g[0]}\n2位:#{g[1]}\n3位:#{g[2]}\n\n○ゴーゴー星占い\n総合1位:#{gt.total_no1}\n\n○スッキりす占い\n1位:#{s[0]}月\n2位:#{s[1]}月\n3位:#{s[2]}月\n\n#今朝の占い\n\n詳細↓https://fortune-checker.supunic.com"
-
     client.update(text)
   end
 end

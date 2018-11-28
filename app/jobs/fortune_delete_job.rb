@@ -14,7 +14,7 @@ class FortuneDeleteJob < ApplicationJob
       # Slackにメッセージ送信
       Slack.chat_postMessage(
         channel: '#占いapp',
-        text: 'FortuneChecker データ削除にエラーが発生しています。'
+        text: "FortuneChecker\nデータ削除にエラーが発生しています。"
       )
     end
   end
