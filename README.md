@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリケーションは、朝の情報番組の占い結果をまとめてチェックできます。
 
-Things you may want to cover:
++ 星座別の占い結果一覧
++ 番組別の占いランキング
++ 総合ランキング
 
-* Ruby version
+が確認できます。
 
-* System dependencies
+また、Twitter botとして毎朝占い結果をまとめたものを、自動ツイートします。
 
-* Configuration
+公式HPよりスクレイピングで取得したデータを元に、占い結果を表示しております。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
