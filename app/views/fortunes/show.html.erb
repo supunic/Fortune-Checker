@@ -27,10 +27,11 @@
         <% end %>
         <div class="sns_share_btn">
           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○めざまし占い：<%= @mezamashi_sign_fortune.rank %>位&#13;&#10;<%= @mezamashi_sign_fortune.text1 %>。<%= @mezamashi_sign_fortune.text2 %>。&#13;&#10;ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
-            data-via="app_fortune"
+            data-url="https://fortune-checker.supunic.com"
+            data-text="今日の<%= @sign %>の運勢&#13;&#10;○めざまし占い：<%= @mezamashi_sign_fortune.rank %>位&#13;&#10;<%= @mezamashi_sign_fortune.text1 %>。<%= @mezamashi_sign_fortune.text2 %>。&#13;&#10;ラッキーポイント：<%= @mezamashi_sign_fortune.lucky_point %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+            data-via="fortune_checker"
             data-hashtags="今朝の占い&#13;&#10;"
-            data-related="app_fortune,supunic_sup"
+            data-related="fortune_checker,supunic_sup"
             data-lang="ja"
             data-show-count="false">Tweet</a>
           <!-- <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.com" style="display: none;"></div> -->
@@ -56,10 +57,11 @@
         <% end %>
         <div class="sns_share_btn">
           <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-            data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○ぐでたま占い：<%= @gudetama_sign_fortune.rank %>位&#13;&#10;<%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %>&#13;&#10;<%= @gudetama_sign_fortune.text %>。&#13;&#10;ラッキーカラー：<%= @gudetama_sign_fortune.lucky_color %>&#13;&#10;ラッキーアイテム：<%= @gudetama_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
-            data-via="app_fortune"
+            data-url="https://fortune-checker.supunic.com"
+            data-text="今日の<%= @sign %>の運勢&#13;&#10;○ぐでたま占い：<%= @gudetama_sign_fortune.rank %>位&#13;&#10;<%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %>&#13;&#10;<%= @gudetama_sign_fortune.text %>。&#13;&#10;ラッキーカラー：<%= @gudetama_sign_fortune.lucky_color %>&#13;&#10;ラッキーアイテム：<%= @gudetama_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+            data-via="fortune_checker"
             data-hashtags="今朝の占い&#13;&#10;"
-            data-related="app_fortune,supunic_sup"
+            data-related="fortune_checker,supunic_sup"
             data-lang="ja"
             data-show-count="false">Tweet</a>
           <!-- <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.cmm" style="display: none;"></div> -->
@@ -111,10 +113,11 @@
       <li class="fortune_key">幸運のカギ：<%= @gogo_sign_fortune.lucky_item %></li>
       <div class="sns_share_btn">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
-          data-text="【Fortune Checker】今朝の占いをまとめてチェック！&#13;&#10;&#13;&#10;今日の<%= @sign %>の運勢&#13;&#10;○ゴーゴー星占い&#13;&#10;<%= @gogo_sign_fortune.text %>&#13;&#10;金運：<%= @gogo_sign_fortune.kinun.to_s %>&#13;&#10;恋愛運：<%= @gogo_sign_fortune.renai.to_s %>&#13;&#10;仕事運：<%= @gogo_sign_fortune.shigoto.to_s %>&#13;&#10;健康運：<%= @gogo_sign_fortune.kenko.to_s %>&#13;&#10;ラッキーカラー：<%= @gogo_sign_fortune.lucky_color %>&#13;&#10;幸運のカギ：<%= @gogo_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
-          data-via="app_fortune"
+          data-url="https://fortune-checker.supunic.com"
+          data-text="今日の<%= @sign %>の運勢&#13;&#10;○ゴーゴー星占い&#13;&#10;<%= @gogo_sign_fortune.text %>&#13;&#10;金運：<%= @gogo_sign_fortune.kinun.to_s %>&#13;&#10;恋愛運：<%= @gogo_sign_fortune.renai.to_s %>&#13;&#10;仕事運：<%= @gogo_sign_fortune.shigoto.to_s %>&#13;&#10;健康運：<%= @gogo_sign_fortune.kenko.to_s %>&#13;&#10;ラッキーカラー：<%= @gogo_sign_fortune.lucky_color %>&#13;&#10;幸運のカギ：<%= @gogo_sign_fortune.lucky_item %>&#13;&#10;&#13;&#10;他の占いもチェックしよう！&#13;&#10;"
+          data-via="fortune_checker"
           data-hashtags="今朝の占い&#13;&#10;"
-          data-related="app_fortune,supunic_sup"
+          data-related="fortune_checker,supunic_sup"
           data-lang="ja"
           data-show-count="false">Tweet</a>
         <!-- <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://supunic.cmm" style="display: none;"></div> -->

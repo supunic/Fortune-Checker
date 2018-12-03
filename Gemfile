@@ -54,3 +54,6 @@ gem 'jquery-turbolinks'
 # デブロイ用
 gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
+
+# メトリクス分析
+gem "metric_fu"
