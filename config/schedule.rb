@@ -11,6 +11,11 @@ end
 #   runner 'TweetJob.perform_later'
 # end
 
+# 総合一位ツイート処理（追加）
+every :weekday, at: '12:00 pm' do
+  runner 'TotalRankingTweetJob.perform_later'
+end
+
 # データベース削除処理
 every :weekday, at: '8:10 am' do
   runner 'FortuneDeleteJob.perform_later'

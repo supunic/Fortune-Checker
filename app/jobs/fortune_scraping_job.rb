@@ -33,7 +33,7 @@ class FortuneScrapingJob < ApplicationJob
         channel: '#占いapp',
         text: "FortuneChecker\nスクレイピングが実行されました。"
       )
-      
+
       # Tweet Jobの起動
       begin
         TweetJob.perform_later
