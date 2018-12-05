@@ -59,11 +59,11 @@ class TotalRankingTweetJob < ApplicationJob
         string += "ぐでたま占い★#{i+1}位\n" if @gude_result_1[i] == "t"
       end
 
-      string += "ゴーゴー星占い★総合1位\n" if @gogo_result_1[0] == "t"
-      string += "ゴーゴー星占い★金運1位\n" if @gogo_result_1[1] == "t"
-      string += "ゴーゴー星占い★恋愛運1位\n" if @gogo_result_1[2] == "t"
-      string += "ゴーゴー星占い★仕事運1位\n" if @gogo_result_1[3] == "t"
-      string += "ゴーゴー星占い★健康運1位\n" if @gogo_result_1[4] == "t"
+      string += "ゴーゴー占い★総合1位\n" if @gogo_result_1[0] == "t"
+      string += "ゴーゴー占い★金運1位\n" if @gogo_result_1[1] == "t"
+      string += "ゴーゴー占い★恋愛運1位\n" if @gogo_result_1[2] == "t"
+      string += "ゴーゴー占い★仕事運1位\n" if @gogo_result_1[3] == "t"
+      string += "ゴーゴー占い★健康運1位\n" if @gogo_result_1[4] == "t"
 
       com = ["何かにチャレンジするなら今日かも！", "めっちゃいいかんじ！", "何かいいことがあるかも！", "努力が報われる日かも！", "今日は一日ハッピーな日です！"]
       comment = com.sample
