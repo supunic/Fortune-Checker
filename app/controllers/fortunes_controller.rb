@@ -89,8 +89,10 @@ class FortunesController < ApplicationController
       @date = today
     elsif Mezamashi.exists?(created_at: yesterday)
       @date = yesterday
-    else
+    elsif Mezamashi.exists?(created_at: day_before_yasterday)
       @date = day_before_yasterday
+    else
+      @date = Mezamashi.last.created_at.beginning_of_day..Mezamashi.last.created_at.end_of_day
     end
   end
 end
