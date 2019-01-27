@@ -1,14 +1,19 @@
 set :output, "log/scraping.log"
 set :environment, :production
 
-# スクレイピング処理
-every :weekday, at: '8:05 am' do
-  runner 'FortuneScrapingJob.perform_later'
+# ゴーゴー占いスクレイピング処理＆ツイート
+every :weekday, at: '5:03 am' do
+  runner 'GogoTweetJob.perform_later'
 end
 
-# ツイート処理 → スクレイピング処理成功時に移動
-every :weekday, at: '8:08 am' do
-  runner 'TweetJob.perform_later'
+# ぐでたま占いスクレイピング処理＆ツイート
+every :weekday, at: '6:00 am' do
+  runner 'GudetamaTweetJob.perform_later'
+end
+
+# めざまし・すっきりすスクレイピング処理＆メインツイート
+every :weekday, at: '8:03 am' do
+  runner 'FortuneScrapingJob.perform_later'
 end
 
 # 総合一位ツイート処理（追加）

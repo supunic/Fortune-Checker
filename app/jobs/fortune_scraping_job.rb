@@ -14,24 +14,20 @@ class FortuneScrapingJob < ApplicationJob
       # 星座占いまとめ
       signs = ["おひつじ座", "おうし座", "ふたご座", "かに座", "しし座", "おとめ座", "てんびん座", "さそり座", "いて座", "やぎ座", "みずがめ座", "うお座"]
 
+      # めざまし占い
       signs.each do |sign|
         Mezamashi.mezamashiFortune(sign)
-        Gudetama.gudetamaFortune(sign)
-        Gogo.gogoFortune(sign)
       end
 
-      # 誕生月占い
+      # すっきりす占い
       for month in 1..12 do
         Sukkirisu.sukkirisuFortune(month)
       end
 
-      # ゴーゴー占い総合
-      Gogototal.gogoFortuneTotal
-
       # Slackにメッセージ送信
       Slack.chat_postMessage(
         channel: '#占いapp',
-        text: "FortuneChecker\nスクレイピングが実行されました。"
+        text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングが実行されました。"
       )
 
       # Tweet Jobの起動
@@ -39,19 +35,19 @@ class FortuneScrapingJob < ApplicationJob
         TweetJob.perform_later
         Slack.chat_postMessage(
           channel: '#占いapp',
-          text: "FortuneChecker\nツイートが実行されました。"
+          text: "FortuneChecker\nメインツイートが実行されました。"
         )
       rescue
         Slack.chat_postMessage(
           channel: '#占いapp',
-          text: "FortuneChecker\nツイートにエラーが発生しています。"
+          text: "FortuneChecker\nメインツイートにエラーが発生しています。"
         )
       end
     rescue
       # Slackにメッセージ送信
       Slack.chat_postMessage(
         channel: '#占いapp',
-        text: "FortuneChecker\nスクレイピングにエラーが発生しています。"
+        text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングにエラーが発生しています。"
       )
     end
   end

@@ -45,7 +45,7 @@
       <%= link_to check_fortune_path("gudetama") do %>
         <h3 class="uranai_title">ぐでたま占い</h3>
       <% end %>
-      <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
+      <p class="show_update"><%= simple_time(@gudetama_sign_fortune.created_at) %> 更新</p>
       <ul>
         <li class="uranai_rank"><%= @gudetama_sign_fortune.rank %>位</li>
         <li class="godetamanahito"><%= gudetama_hogehogenahito(@gudetama_sign_fortune.rank) %></li>
@@ -76,7 +76,7 @@
     <%= link_to check_fortune_path("gogo") do %>
       <h3 class="uranai_title">ゴーゴー星占い</h3>
     <% end %>
-    <p class="show_update"><%= simple_time(@mezamashi_sign_fortune.created_at) %> 更新</p>
+    <p class="show_update"><%= simple_time(@gogototal_fortune.created_at) %> 更新</p>
     <ul>
       <div class="gogo_rank_div">
         <% if gogototal_search_no1(@gogototal_fortune, @sign).any? %>

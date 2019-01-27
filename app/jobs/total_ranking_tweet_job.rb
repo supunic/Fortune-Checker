@@ -68,7 +68,7 @@ class TotalRankingTweetJob < ApplicationJob
       com = ["何かにチャレンジするなら今日かも！", "めっちゃいいかんじ！", "何かいいことがあるかも！", "努力が報われる日かも！", "今日は一日ハッピーな日です！"]
       comment = com.sample
 
-      text = "【今日の占い総合ナンバーワンは？！】\n\n・・・★#{@overall_top3[0]}★のあなたです！\n\n#{string}\n#{comment}\n\n#今朝の占い\n\n他の星座もチェック！↓https://fortune-checker.supunic.com"
+      text = "【#{@mezamashi.first.created_at.strftime('%m/%d')} 今日の占い総合ナンバーワンは？！】\n\n・・・★#{@overall_top3[0]}★のあなたです！\n\n#{string}\n#{comment}\n\n#今朝の占い\n\n他の星座もチェック！↓https://fortune-checker.supunic.com"
       client.update(text)
 
       Slack.chat_postMessage(

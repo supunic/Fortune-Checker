@@ -47,18 +47,37 @@ class FortunesController < ApplicationController
     @meza_result_3 = @meza_result
     @gude_result_3 = @gude_result
     @gogo_result_3 = @gogo_result
+
+    # ゴーゴー占い更新後の表示用
+    gogo_date = Gogo.last.created_at.beginning_of_day..Gogo.last.created_at.end_of_day if Gogo.last.created_at != @date
+    @gogototal_fortune = Gogototal.where(created_at: gogo_date).first
+    @gogo_total_no1 = Gogo.where(created_at: gogo_date).find_by(sign: @gogototal_fortune.total_no1)
+    @gogo_gold_no1 = Gogo.where(created_at: gogo_date).find_by(sign: @gogototal_fortune.gold_no1)
+    @gogo_love_no1 = Gogo.where(created_at: gogo_date).find_by(sign: @gogototal_fortune.love_no1)
+    @gogo_work_no1 = Gogo.where(created_at: gogo_date).find_by(sign: @gogototal_fortune.work_no1)
+    @gogo_health_no1 = Gogo.where(created_at: gogo_date).find_by(sign: @gogototal_fortune.health_no1)
+
+    # ぐでたま占い更新後の表示用
+    gudetama_date = Gudetama.last.created_at.beginning_of_day..Gudetama.last.created_at.end_of_day if Gudetama.last.created_at != @date
+    @gudetama = []
+    for i in 1..3 do
+      @gudetama << Gudetama.where(created_at: gudetama_date).find_by(rank: i)
+    end
   end
 
   def show
+    gogo_date = Gogo.last.created_at.beginning_of_day..Gogo.last.created_at.end_of_day if Gogo.last.created_at != @date
+    gudetama_date = Gudetama.last.created_at.beginning_of_day..Gudetama.last.created_at.end_of_day if Gudetama.last.created_at != @date
+
     @sign = params_change(params[:id])
     @mezamashi_sign_fortune = Mezamashi.where(created_at: @date).find_by(sign: @sign)
-    @gogo_sign_fortune = Gogo.where(created_at: @date).find_by(sign: @sign)
-    @gudetama_sign_fortune = Gudetama.where(created_at: @date).find_by(sign: @sign)
-    @gogototal_fortune = Gogototal.where(created_at: @date).first
+    @gogo_sign_fortune = Gogo.where(created_at: gogo_date).find_by(sign: @sign)
+    @gudetama_sign_fortune = Gudetama.where(created_at: gudetama_date).find_by(sign: @sign)
+    @gogototal_fortune = Gogototal.where(created_at: gogo_date).first
 
     @mezamashi_lucky_item = searchLuckyItemByAmazon(Mezamashi.where(created_at: @date).find_by(sign: @sign).lucky_point)
-    @gogo_lucky_item = searchLuckyItemByAmazon(Gogo.where(created_at: @date).find_by(sign: @sign).lucky_item)
-    @gudetama_lucky_item = searchLuckyItemByAmazon(Gudetama.where(created_at: @date).find_by(sign: @sign).lucky_item)
+    @gogo_lucky_item = searchLuckyItemByAmazon(Gogo.where(created_at: gogo_date).find_by(sign: @sign).lucky_item)
+    @gudetama_lucky_item = searchLuckyItemByAmazon(Gudetama.where(created_at: gudetama_date).find_by(sign: @sign).lucky_item)
   end
 
   def check
@@ -66,9 +85,11 @@ class FortunesController < ApplicationController
       @name = "めざまし占い"
       @fortunes = Mezamashi.where(created_at: @date).sort_by { |a| a[:id] }[0, 12].sort_by! { |a| a[:rank] }
     elsif params[:id] == "gudetama"
+      @date = Gudetama.last.created_at.beginning_of_day..Gudetama.last.created_at.end_of_day if Gudetama.last.created_at != @date
       @name = "ぐでたま占い"
       @fortunes = Gudetama.where(created_at: @date).sort_by { |a| a[:id] }[0, 12].sort_by! { |a| a[:rank] }
     elsif params[:id] == "gogo"
+      @date = Gogo.last.created_at.beginning_of_day..Gogo.last.created_at.end_of_day if Gogo.last.created_at != @date
       @name = "ゴーゴー星占い"
       @fortunes = Gogo.where(created_at: @date).sort_by { |a| a[:id] }[0, 12]
       @fortune_total = Gogototal.where(created_at: @date).first
