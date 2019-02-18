@@ -75,9 +75,10 @@ class FortunesController < ApplicationController
     @gudetama_sign_fortune = Gudetama.where(created_at: gudetama_date).find_by(sign: @sign)
     @gogototal_fortune = Gogototal.where(created_at: gogo_date).first
 
-    @mezamashi_lucky_item = searchLuckyItemByAmazon(Mezamashi.where(created_at: @date).find_by(sign: @sign).lucky_point)
-    @gogo_lucky_item = searchLuckyItemByAmazon(Gogo.where(created_at: gogo_date).find_by(sign: @sign).lucky_item)
-    @gudetama_lucky_item = searchLuckyItemByAmazon(Gudetama.where(created_at: gudetama_date).find_by(sign: @sign).lucky_item)
+    # 2/18 アマゾンAPI中止
+    # @mezamashi_lucky_item = searchLuckyItemByAmazon(Mezamashi.where(created_at: @date).find_by(sign: @sign).lucky_point)
+    # @gogo_lucky_item = searchLuckyItemByAmazon(Gogo.where(created_at: gogo_date).find_by(sign: @sign).lucky_item)
+    # @gudetama_lucky_item = searchLuckyItemByAmazon(Gudetama.where(created_at: gudetama_date).find_by(sign: @sign).lucky_item)
   end
 
   def check

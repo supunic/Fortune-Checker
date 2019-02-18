@@ -118,30 +118,30 @@ module FortunesHelper
     @gogo_result[4] = "t" if sign == @gogo_health_no1.sign
   end
 
-  # AMAZON API
-  def searchLuckyItemByAmazon(lucky_item)
-    Amazon::Ecs.configure do |options|
-      options[:AWS_access_key_id] = ENV['AMAZON_ACCESS_KEY']
-      options[:AWS_secret_key] = ENV['AMAZON_SECRET_KEY']
-      options[:associate_tag] = ENV['AMAZON_ASSOCIATE_TAG']
-    end
-    Amazon::Ecs.debug = true
-    amazon_lucky_items = Amazon::Ecs.item_search(
-      lucky_item,
-      search_index: 'All',
-      dataType: 'script',
-      response_group: 'ItemAttributes, Images',
-      country:  'jp',
-    )
-    first_item = amazon_lucky_items.items.first
-    if first_item == nil
-      @lucky_item = {image: nil}
-    else
-      @lucky_item = {
-        # title: first_item.get('ItemAttributes/Title'),
-        # url: first_item.get('DetailPageURL'),
-        image: first_item.get('MediumImage/URL')
-      }
-    end
-  end
+  # AMAZON API --> 2/18 アクセス数上限変更のため、中止
+  # def searchLuckyItemByAmazon(lucky_item)
+  #   Amazon::Ecs.configure do |options|
+  #     options[:AWS_access_key_id] = ENV['AMAZON_ACCESS_KEY']
+  #     options[:AWS_secret_key] = ENV['AMAZON_SECRET_KEY']
+  #     options[:associate_tag] = ENV['AMAZON_ASSOCIATE_TAG']
+  #   end
+  #   Amazon::Ecs.debug = true
+  #   amazon_lucky_items = Amazon::Ecs.item_search(
+  #     lucky_item,
+  #     search_index: 'All',
+  #     dataType: 'script',
+  #     response_group: 'ItemAttributes, Images',
+  #     country:  'jp',
+  #   )
+  #   first_item = amazon_lucky_items.items.first
+  #   if first_item == nil
+  #     @lucky_item = {image: nil}
+  #   else
+  #     @lucky_item = {
+  #       # title: first_item.get('ItemAttributes/Title'),
+  #       # url: first_item.get('DetailPageURL'),
+  #       image: first_item.get('MediumImage/URL')
+  #     }
+  #   end
+  # end
 end
