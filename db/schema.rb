@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181105071132) do
+ActiveRecord::Schema.define(version: 20200215164617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20181105071132) do
     t.text "lucky_item", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rank"
   end
 
   create_table "gogototals", force: :cascade do |t|

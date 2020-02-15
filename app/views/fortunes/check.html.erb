@@ -51,9 +51,16 @@
             <div class="left_side">
               <% if gogototal_search_no1(@fortune_total, fortune.sign).any? %>
                 <div class="gogo_rank_div">
+                  <% if gogototal_search_no1(@fortune_total, fortune.sign).count === 1 %>
+                    <li class="gogo_rank"><%= fortune.rank %>位</li>
+                  <% end %>
                   <% gogototal_search_no1(@fortune_total, fortune.sign).each do |no1| %>
                     <li class="gogo_rank"><%= no1 %></li>
                   <% end %>
+                </div>
+              <% else %>
+                <div class="gogo_rank_div">
+                  <li class="gogo_rank" style="font-size: 20px;"><%= fortune.rank %>位</li>
                 </div>
               <% end %>
               <li class="sign"><%= fortune.sign %></li>

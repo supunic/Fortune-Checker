@@ -80,11 +80,12 @@
     <ul>
       <div class="gogo_rank_div">
         <% if gogototal_search_no1(@gogototal_fortune, @sign).any? %>
+          <li class="gogo_rank"><%= @gogo_sign_fortune.rank %>位</li>
           <% gogototal_search_no1(@gogototal_fortune, @sign).each do |no1|%>
             <li class="gogo_rank"><%= no1 %></li>
           <% end %>
         <% else %>
-          <li class="gogo_rank"><%= image_tag img_select(@sign) %></li>
+          <li class="gogo_rank rank"><%= @gogo_sign_fortune.rank %>位</li>
         <% end %>
       </div>
       <li class="uranai_text"><%= @gogo_sign_fortune.text %></li>

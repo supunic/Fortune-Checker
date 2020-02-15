@@ -1,0 +1,15 @@
+current directory: /Users/endoseiya/workspace/Fortune-Checker/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/endoseiya/.rbenv/versions/2.6.3/bin/ruby -I /Users/endoseiya/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190623-141-1r79tfp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/endoseiya/workspace/Fortune-Checker/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/endoseiya/workspace/Fortune-Checker/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/endoseiya/workspace/Fortune-Checker/vendor/bundle/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20190623-141-putk5o

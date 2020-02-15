@@ -18,15 +18,15 @@ class GogoTweetJob < ApplicationJob
           Gogo.gogoFortune(sign)
         end
         Gogototal.gogoFortuneTotal
-        Slack.chat_postMessage(
-          channel: '#占いapp',
-          text: "FortuneChecker\nゴーゴー占いのスクレイピング処理が完了しました。"
-        )
+        # Slack.chat_postMessage(
+        #   channel: '#占いapp',
+        #   text: "FortuneChecker\nゴーゴー占いのスクレイピング処理が完了しました。"
+        # )
       rescue
-        Slack.chat_postMessage(
-          channel: '#占いapp',
-          text: "FortuneChecker\nゴーゴー占いのスクレイピング処理でエラーが発生しました。"
-        )
+        # Slack.chat_postMessage(
+        #   channel: '#占いapp',
+        #   text: "FortuneChecker\nゴーゴー占いのスクレイピング処理でエラーが発生しました。"
+        # )
       end
 
       client = Twitter::REST::Client.new do |config|
@@ -47,17 +47,17 @@ class GogoTweetJob < ApplicationJob
       text += "健康運1位★#{fortune.health_no1}\n"
       text += "\n#今朝の占い\n\n詳細はこちら↓https://fortune-checker.supunic.com"
 
-      client.update(text)
+      # client.update(text)
 
-      Slack.chat_postMessage(
-        channel: '#占いapp',
-        text: "FortuneChecker\nゴーゴー占いのツイートが完了しました。"
-      )
+      # Slack.chat_postMessage(
+      #   channel: '#占いapp',
+      #   text: "FortuneChecker\nゴーゴー占いのツイートが完了しました。"
+      # )
     rescue
-      Slack.chat_postMessage(
-        channel: '#占いapp',
-        text: "FortuneChecker\nゴーゴー占いのツイートでエラーが発生しています。"
-      )
+      # Slack.chat_postMessage(
+      #   channel: '#占いapp',
+      #   text: "FortuneChecker\nゴーゴー占いのツイートでエラーが発生しています。"
+      # )
     end
   end
 end

@@ -92,7 +92,7 @@ class FortunesController < ApplicationController
     elsif params[:id] == "gogo"
       @date = Gogo.last.created_at.beginning_of_day..Gogo.last.created_at.end_of_day if Gogo.last.created_at != @date
       @name = "ゴーゴー星占い"
-      @fortunes = Gogo.where(created_at: @date).sort_by { |a| a[:id] }[0, 12]
+      @fortunes = Gogo.where(created_at: @date).sort_by { |a| a[:id] }[0, 12].sort_by! { |a| a[:rank] }
       @fortune_total = Gogototal.where(created_at: @date).first
     elsif params[:id] == "sukkirisu"
       @name = "スッキりす誕生月占い"
