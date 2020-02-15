@@ -17,15 +17,15 @@ class GudetamaTweetJob < ApplicationJob
         signs.each do |sign|
           Gudetama.gudetamaFortune(sign)
         end
-        # Slack.chat_postMessage(
-        #   channel: '#占いapp',
-        #   text: "FortuneChecker\nぐでたま占いのスクレイピング処理が完了しました。"
-        # )
+        Slack.chat_postMessage(
+          channel: '#占いapp',
+          text: "FortuneChecker\nぐでたま占いのスクレイピング処理が完了しました。"
+        )
       rescue
-        # Slack.chat_postMessage(
-        #   channel: '#占いapp',
-        #   text: "FortuneChecker\nぐでたま占いのスクレイピング処理でエラーが発生しました。"
-        # )
+        Slack.chat_postMessage(
+          channel: '#占いapp',
+          text: "FortuneChecker\nぐでたま占いのスクレイピング処理でエラーが発生しました。"
+        )
       end
 
       client = Twitter::REST::Client.new do |config|
@@ -50,17 +50,17 @@ class GudetamaTweetJob < ApplicationJob
       end
       text += "\n#今朝の占い\n\n詳細はこちら↓https://fortune-checker.supunic.com"
 
-      # client.update(text)
+      client.update(text)
 
-      # Slack.chat_postMessage(
-      #   channel: '#占いapp',
-      #   text: "FortuneChecker\nぐでたま占いのツイートが完了しました。"
-      # )
+      Slack.chat_postMessage(
+        channel: '#占いapp',
+        text: "FortuneChecker\nぐでたま占いのツイートが完了しました。"
+      )
     rescue
-      # Slack.chat_postMessage(
-      #   channel: '#占いapp',
-      #   text: "FortuneChecker\nぐでたま占いのツイートでエラーが発生しています。"
-      # )
+      Slack.chat_postMessage(
+        channel: '#占いapp',
+        text: "FortuneChecker\nぐでたま占いのツイートでエラーが発生しています。"
+      )
     end
   end
 end
