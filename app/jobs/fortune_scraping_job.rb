@@ -24,31 +24,31 @@ class FortuneScrapingJob < ApplicationJob
         Sukkirisu.sukkirisuFortune(month)
       end
 
-      # Slackにメッセージ送信
-      Slack.chat_postMessage(
-        channel: '#占いapp',
-        text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングが実行されました。"
-      )
+      # # Slackにメッセージ送信
+      # Slack.chat_postMessage(
+      #   channel: '#占いapp',
+      #   text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングが実行されました。"
+      # )
 
       # Tweet Jobの起動
-      begin
-        TweetJob.perform_later
-        Slack.chat_postMessage(
-          channel: '#占いapp',
-          text: "FortuneChecker\nメインツイートが実行されました。"
-        )
-      rescue
-        Slack.chat_postMessage(
-          channel: '#占いapp',
-          text: "FortuneChecker\nメインツイートにエラーが発生しています。"
-        )
-      end
+      # begin
+      #   TweetJob.perform_later
+      #   Slack.chat_postMessage(
+      #     channel: '#占いapp',
+      #     text: "FortuneChecker\nメインツイートが実行されました。"
+      #   )
+      # rescue
+      #   Slack.chat_postMessage(
+      #     channel: '#占いapp',
+      #     text: "FortuneChecker\nメインツイートにエラーが発生しています。"
+      #   )
+      # end
     rescue
       # Slackにメッセージ送信
-      Slack.chat_postMessage(
-        channel: '#占いapp',
-        text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングにエラーが発生しています。"
-      )
+      # Slack.chat_postMessage(
+      #   channel: '#占いapp',
+      #   text: "FortuneChecker\nめざまし・すっきりす占いのスクレイピングにエラーが発生しています。"
+      # )
     end
   end
 end
