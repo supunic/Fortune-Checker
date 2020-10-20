@@ -2,7 +2,7 @@ set :output, "log/scraping.log"
 set :environment, :production
 
 # ゴーゴー占いスクレイピング処理＆ツイート
-every :weekday, at: '5:03 am' do
+every :weekday, at: '5:10 am' do
   runner 'GogoTweetJob.perform_later'
 end
 
